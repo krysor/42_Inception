@@ -1,0 +1,47 @@
+MANDATORY {
+
+Steps:
+1. use a Virtual Machine
+2. all conf files in srcs/
+3. Makefile must set up entire application
+4. use "docker compose"
+5. each Docker image same name as corresponding service
+6. each service runs in dedicated container
+7. contains built from penultimate stable Debian
+8. write own "Dockerfile", one per service
+9. Dockerfiles must get called in "docker-compose.yml" in Makefile
+
+Set up:
+1. docker w/ NGINX with TLSv1.2 / v1.3
+2. docker w/ WordPress + php-fpm (installed and configured) without NGINX
+3. docker w/ MariaDB w/o NGINX
+4. volume w/ WordPress database
+5. volume 2 w/ WordPress website files
+6. docker-network that establishes connection between containers
+
+container have to restart in case of crash
+
+DO NOT:
+1. use patch based on 'tail -f', 'bash', 'sleep infinity', 'while true'
+2. use network: host or --link
+3. start containers with command running an inf loop (same for any cmd in entrypoint (scripts))
+4. use latest tag
+5. put password in Dockerfiles
+
+READ:
+1. daemons + how they work
+2. PID 1
+3. best practices for writing DockerFiles
+
+REQUIREMENT
+0. file structure in example
+1. WordPress DB: 2 users of which 1 admin (admin username can't contain "admin")
+2. volumes available in "/home/login/data" folder of the host machine (login=kkaczoro) 
+3. configure domain name so it points to local IP address
+4. domain name = login.42.fr (replace login)
+5. use environment variables
+6. store environment variables in .env file
+7. NGINX container = the only entrypoint (via the port 443 using TLSv1.2 / 1.3)
+8. store creditentials, API keys, environment variables in .env IGNORED by git
+
+} END MANDATORY
