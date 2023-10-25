@@ -45,3 +45,16 @@ REQUIREMENT
 8. store creditentials, API keys, environment variables in .env IGNORED by git
 
 } END MANDATORY
+
+BONUS {
+
+- A Dockerfile for each extra service (inside its own container + dedicated V if req)
+- open more ports if necessary
+
+1. "redis cache" for WordPress
+2. "FTP server" pointing to the volume of the WordPress website
+3. simple static website in any language (except PHP)
+4. "Adminer"
+5. a service of choice
+
+}
