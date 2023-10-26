@@ -29,8 +29,8 @@ DO NOT:
 5. put password in Dockerfiles
 
 READ:
-1. daemons + how they work
-2. PID 1
+x 1. daemons + how they work
+x 2. PID 1
 3. best practices for writing DockerFiles
 
 REQUIREMENT
