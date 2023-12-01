@@ -1,7 +1,12 @@
+to ssh into vm
+
+to copy file from host to vm
+scp -P 3022 pathHost username@hostNameVM:pathVM
+
 MANDATORY {
 
 Steps:
-1. use a Virtual Machine
+x 1. use a Virtual Machine
 2. all conf files in srcs/
 3. Makefile must set up entire application
 4. use "docker compose"
