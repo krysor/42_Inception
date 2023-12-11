@@ -1,0 +1,34 @@
+version: '3'
+
+# All the services that you will work with should be declared under the SERVICES section!
+services:
+
+  # Name of the first service (for example nginx)
+  nginx:
+  
+    # The hostname of the service (will be the same as the service name!)
+    hostname: nginx
+    
+    # Where the service exists (path) so you can build it
+    build:
+      context: ./requirements/nginx
+      dockerfile: Dockerfile
+      
+    # Restart to always keep the service restarting in case of any unexpected errors causing it to go down
+    restart: always
+    
+    # This line explains itself!!!
+    depends_on:
+      - wordpress
+      
+    # The ports that will be exposed and you will work with
+    ports:
+      - 443:443
+      
+    # The volumes that you will be mounted when the container gets built
+    volumes:
+      - wordpress:/var/www/html
+      
+    # The networks that the container will connect and communicate with the other containers
+    networks:
+      - web
