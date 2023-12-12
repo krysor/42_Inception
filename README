@@ -80,8 +80,10 @@ DOCKER
 - to check running containers
 	docker ps -a
 - to build an image
-	sudo docker build -t test:1.0 .
+	sudo docker build -t containerName pathDockerfile(can be .)
 - to run an image
-	docker run <container id>
-- to remove an image
-	docker rm <container id>
+	docker run --name containerName -d imageName
+- to remove a container
+	docker rm containerId
+- to remove all stopped containers
+	sudo docker container prune
