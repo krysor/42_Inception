@@ -1,18 +1,17 @@
 # This Specifies the base images for the container (in this case, it's the 3.14 version of Alpine)
-FROM debian:12
-
-# This Copies the contents of "./conf/nginx.conf" on the host machine to the "/etc/nginx/http.d/"
-# directory inside the container
-#COPY ./conf/nginx.conf /etc/nginx/http.d/default.conf
+FROM alpine:3
 
 # This Run commands in the container shell and installs the specified packages
 # (it will install nginx & OpenSSL, and will create the directory "/run/nginx" as well)
-RUN apt-get update && \
-    apt-get install -y nginx
+RUN apk update && \
+    apk add nginx
 	# openssl
-	#mkdir -p /run/nginx
+	# mkdir -p /run/nginx
+	
 
-## ENV PORT=8080
+# This Copies the contents of "./conf/nginx.conf" on the host machine to the "/etc/nginx/http.d/"
+# directory inside the container
+COPY ./nginx.conf /etc/nginx/http.d/default.conf
 
 # This Specifies the command that will run when the container gets started
 # "-g" option for global
