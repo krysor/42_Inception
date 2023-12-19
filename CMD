@@ -1,0 +1,35 @@
+GENERAL
+- check debian version
+	cat /etc/debian_version
+- get IP address
+	ip address
+
+SSH
+- to ssh into vm:
+	ssh -p 3022 kkaczoro@127.0.0.1
+- to copy file from host to vm:
+	scp -P 3022 pathHost username@hostNameVM:pathVM
+
+DOCKER
+- to check running containers
+	docker ps -a
+- to build an image
+	sudo docker build -t imageName pathDockerfile(can be .)
+- to run an image
+	docker run --name containerName -d -p 443:443 imageName
+- to stop an image
+	docker stop containerName / containerID
+- to remove a container
+	docker rm containerId
+- to remove all stopped containers
+	sudo docker container prune --force
+- to check logs of a container
+	sudo docker logs containerName
+
+NGINX
+- to test configuration file
+	sudo nginx -t -c `pwd`/confFileName ; echo $?
+
+VIRTUALBOX
+- to open the website running on a container inside a VM
+	Setttings/Network/Bridged instead of NAT

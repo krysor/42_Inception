@@ -62,28 +62,3 @@ BONUS {
 5. a service of choice
 
 }
-
-
-COMMANDS:
-
-GENERAL
--check debian version
-	cat /etc/debian_version
-
-SSH
-- to ssh into vm:
-	ssh -p 3022 kkaczoro@127.0.0.1
-- to copy file from host to vm:
-	scp -P 3022 pathHost username@hostNameVM:pathVM
-
-DOCKER
-- to check running containers
-	docker ps -a
-- to build an image
-	sudo docker build -t containerName pathDockerfile(can be .)
-- to run an image
-	docker run --name containerName -d -p 443:443 imageName
-- to remove a container
-	docker rm containerId
-- to remove all stopped containers
-	sudo docker container prune --force
