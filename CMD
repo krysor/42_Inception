@@ -11,18 +11,20 @@ SSH
 	scp -P 3022 pathHost username@hostNameVM:pathVM
 
 DOCKER
-- to check running containers
-	docker ps -a
+- to list all images
+	sudo docker images
 - to build an image
 	sudo docker build -t imageName pathDockerfile(can be .)
+- to list running containers
+	docker ps -a
 - to run an image
 	docker run --name containerName -d -p 443:443 imageName
-- to stop an image
+- to stop a container
 	docker stop containerName / containerID
 - to remove a container
 	docker rm containerId
-- to remove all stopped containers
-	sudo docker container prune --force
+- to remove all images, containers...
+	sudo docker system prune -a --force
 - to check logs of a container
 	sudo docker logs containerName
 
