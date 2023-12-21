@@ -26,7 +26,7 @@ Set up:
 
 DO NOT:
 0. pull ready-made Docker images
-1. use DockerHub (except Debian)
+1. use DockerHub (except Debian/Alpine)
 2. use patch based on 'tail -f', 'bash', 'sleep infinity', 'while true'
 3. use network: host or --link
 4. start containers with command running an inf loop (same for any cmd in entrypoint (scripts))
