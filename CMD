@@ -3,6 +3,11 @@ GENERAL
 	cat /etc/debian_version
 - get IP address
 	ip address
+- curl an https website using a self signed certificate
+  curl -k ipAddress
+- static ip table
+	vi/nano /etc/hosts
+  
 
 SSH
 - to ssh into vm:
