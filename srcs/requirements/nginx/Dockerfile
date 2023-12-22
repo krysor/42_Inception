@@ -14,7 +14,4 @@ RUN apk update && \
 
 COPY ./nginx.conf /etc/nginx/http.d/default.conf
 
-#delete later
-COPY ./index.html /www/data/index.html
-
 CMD ["nginx", "-g", "daemon off;"]

@@ -37,7 +37,7 @@ DO NOT:
 DO:
 0. file structure in example
 1. WordPress DB: 2 users of which 1 admin (admin username can't contain "admin")
-2. volumes available in "/home/login/data" folder of the host machine (login=kkaczoro) 
+x2. volumes available in "/home/login/data" folder of the host machine (login=kkaczoro) 
 x3. configure domain name so it points to local IP address
 x4. domain name = login.42.fr (replace login)
 5. use environment variables

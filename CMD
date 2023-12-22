@@ -22,7 +22,11 @@ DOCKER
 - to list running containers
 	docker ps -a
 - to run an image
-	docker run --name containerName -d -p 443:443 imageName
+	docker run --name containerName
+		-d (detached in the background)
+		-v pathVolumeHost:pathVolumeC (map physical to virtual volume)
+		-p 443:443 (map ports)
+		imageName
 - to stop a container
 	docker stop containerName / containerID
 - to remove a container
