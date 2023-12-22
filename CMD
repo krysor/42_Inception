@@ -6,14 +6,13 @@ GENERAL
 - curl an https website using a self signed certificate
   curl -k ipAddress
 - static ip table
-	vi/nano /etc/hosts
+	edit the file /etc/hosts
   
-
 SSH
 - to ssh into vm:
-	ssh -p 3022 kkaczoro@127.0.0.1
+	ssh -p portNB username@IPVM
 - to copy file from host to vm:
-	scp -P 3022 pathHost username@hostNameVM:pathVM
+	scp -P portNB pathHost username@hostnameVM:pathVM
 
 DOCKER
 - to list all images
@@ -32,6 +31,8 @@ DOCKER
 	sudo docker system prune -a --force
 - to check logs of a container
 	sudo docker logs containerName
+- execute code in the container
+	sudo docker exec -it containerID CMD
 
 NGINX
 - to test configuration file
