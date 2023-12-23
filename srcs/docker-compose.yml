@@ -3,12 +3,9 @@ version: '3'
 services:
 
   nginx:
-  
     image: nximg
-  
     ports:
       - 443:443
-
     volumes:
       - /home/kkaczoro/data/WordPress:/www/data/
 

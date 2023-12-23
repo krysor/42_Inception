@@ -38,6 +38,7 @@ DOCKER
 - execute code in the container
 	sudo docker exec -it containerID CMD
 
+
 NGINX
 - to test configuration file
 	sudo nginx -t -c `pwd`/confFileName ; echo $?
