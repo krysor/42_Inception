@@ -4,7 +4,7 @@ services:
 
   nginx:
     build: /home/kkaczoro/inception/srcs/requirements/nginx
-    image: nximg
+    image: nximg #not sure what name should it have
     ports:
       - 443:443
     volumes:
