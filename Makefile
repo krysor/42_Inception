@@ -20,9 +20,11 @@
 #			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 all:		
-			docker compose up -d home/kkaczoro/inception/srcs/docker-compose.yml
+			-c srcs
+			docker compose up -d
 
 clean:		
+			-c srcs
 			docker compose down
 
 fclean:		clean
