@@ -3,6 +3,7 @@ version: '3'
 services:
 
   nginx:
+    build: /home/kkaczoro/inception/srcs/requirements/nginx
     image: nximg
     ports:
       - 443:443
