@@ -20,8 +20,7 @@
 #			${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 all:		
-			-c srcs
-			docker compose up -d
+			docker compose up srcs/docker-compose.yml -d
 
 clean:		
 			-c srcs
