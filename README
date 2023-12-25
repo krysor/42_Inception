@@ -8,16 +8,16 @@ x 3. best practices for writing DockerFiles
 Steps:
 x 1. use a Virtual Machine
 x 2. all conf files in srcs/
-3. Makefile must set up entire application
-4. use "docker compose"
+x 3. Makefile must set up entire application
+x 4. use "docker compose"
 5. each Docker image same name as corresponding service
 6. each service runs in dedicated container
-x 7. containers built from penultimate stable Debian
+x 7. containers built from penultimate stable Debian/Alpine
 8. write own "Dockerfiles", one per service
-9. Dockerfiles must get called in "docker-compose.yml" in Makefile
+x 9. Dockerfiles must get called in "docker-compose.yml" in Makefile
 
 Set up:
-1. docker container w/ NGINX with TLSv1.2 / v1.3
+x1. docker container w/ NGINX with TLSv1.2 / v1.3
 2. docker container w/ WordPress + php-fpm (installed and configured) (w/o NGINX !!!)
 3. docker container w/ MariaDB (w/o NGINX !!!)
 4. volume w/ WordPress database

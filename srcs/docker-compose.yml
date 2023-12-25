@@ -3,12 +3,13 @@ version: '3'
 services:
 
   nginx:
-    build: /home/kkaczoro/inception/srcs/requirements/nginx
-    image: nximg #not sure what name should it have
+    container_name: nginx
+    build: ./requirements/nginx
+    image: nginx #this not correct, attempt to pull nginx
     ports:
       - 443:443
     volumes:
-      - /home/kkaczoro/data/WordPress:/www/data/
+      - /home/kkaczoro/data/WebsiteFiles:/www/data/
 
     # The hostname of the service (will be the same as the service name!)
     #hostname: nginx

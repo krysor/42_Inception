@@ -1,8 +1,12 @@
+RELATIVE_PATH = ./srcs/docker-compose.yml
+
+DOCKER_SWITCH = sudo docker compose -f ${RELATIVE_PATH}
+
 all:		
-			sudo docker compose -f srcs/docker-compose.yml up -d
+			${DOCKER_SWITCH} up -d --build
 
 clean:		
-			sudo docker compose -f srcs/docker-compose.yml down
+			${DOCKER_SWITCH} down
 
 fclean:		clean
 			sudo docker system prune -a --force
