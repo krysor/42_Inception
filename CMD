@@ -7,7 +7,7 @@ GENERAL
   curl -k ipAddress
 - static ip table
 	edit the file /etc/hosts
-  
+
 SSH
 - to ssh into vm:
 	ssh -p portNB username@IPVM

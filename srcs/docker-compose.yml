@@ -5,11 +5,19 @@ services:
   nginx:
     container_name: nginx
     build: ./requirements/nginx
-    image: nginx #this not correct, attempt to pull nginx
+    image: nginx
     ports:
       - 443:443
     volumes:
       - /home/kkaczoro/data/WebsiteFiles:/www/data/
+
+  #need to add ports or network for the db to communicate with wp
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
+    image: mariadb
+    volumes: #not sure what the location in the contaienr should be
+      - /home/kkaczoro/data/DataBase:/www/data/
 
     # The hostname of the service (will be the same as the service name!)
     #hostname: nginx
