@@ -11,6 +11,6 @@ RUN apk update && \
 			-newkey rsa:2048 \
 			-keyout /etc/ssl/private/nginx.key
 
-COPY ./nginx.conf /etc/nginx/http.d/default.conf
+COPY ./tools/nginx.conf /etc/nginx/http.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]

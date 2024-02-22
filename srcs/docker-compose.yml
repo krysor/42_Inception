@@ -16,6 +16,22 @@ services:
     # depends_on:
     #  - wordpress
 
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    image: wordpress
+    ports:
+      - 9000:9000
+    volumes:
+      - /home/${LOGIN}/data/WebsiteFiles:/var/www/html/
+    environment:
+      NEV:     ${MARIADB_NAME} #fill it in
+    networks:
+     - docker-network
+    #restart: always
+    # depends_on:
+    #  - mariadb
+
   mariadb:
     container_name: mariadb
     build: ./requirements/mariadb
