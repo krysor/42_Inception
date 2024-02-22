@@ -19,7 +19,7 @@ x 9. Dockerfiles must get called in "docker-compose.yml" in Makefile
 Set up:
 x1. docker container w/ NGINX with TLSv1.2 / v1.3
 2. docker container w/ WordPress + php-fpm (installed and configured) (w/o NGINX !!!)
-3. docker container w/ MariaDB (w/o NGINX !!!)
+x3. docker container w/ MariaDB (w/o NGINX !!!)
 4. volume w/ WordPress database
 5. volume 2 w/ WordPress website files
 6. docker-network that establishes connection between containers

@@ -1,17 +1,8 @@
-FROM alpine:3
+FROM alpine:3.18
 
-RUN apk update && \
-    apk add mariadb && \
-	mkdir -p /var/lib/mysql
-	#openrc && \
-	#rc-service mariadb setup
-	#/etc/init.d/mariadb setup
-    #mkdir -p /run/nginx
+RUN apk update && apk upgrade && \ 
+	apk add mariadb mariadb-client
 
-# This Copies the contents of "./conf/nginx.conf" on the host machine to the "/etc/nginx/http.d/"
-# directory inside the container
-#COPY ./conf/nginx.conf /etc/nginx/http.d/default.conf
+COPY ./tools/config.sh /tmp/config.sh
 
-# This Specifies the command that will run when the container gets started
-#CMD ["echo", "success"]
-CMD ["mariadbd"]
+ENTRYPOINT ["sh", "./tmp/config.sh"]

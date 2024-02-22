@@ -1,16 +1,26 @@
 RELATIVE_PATH = ./srcs/docker-compose.yml
 
-DOCKER_SWITCH = sudo docker compose -f ${RELATIVE_PATH}
+DOCKER = sudo docker compose -f ${RELATIVE_PATH}
 
-all:		
-			${DOCKER_SWITCH} up -d --build
+all:		build up
 
-clean:		
-			${DOCKER_SWITCH} down
+build:		
+			${DOCKER} build
 
-fclean:		clean
+up:
+			${DOCKER} up -d
+		
+down:		
+			${DOCKER} down
+
+clean:		down
 			sudo docker system prune -a --force
 
-re:			fclean all
+fclean:		clean
+			sudo rm -rf /home/${USER}/data/DataBase/*
 
-.PHONY:		all clean fclean re
+re:			clean all
+
+ref:		fclean all
+
+.PHONY:		all build up down clean fclean re
