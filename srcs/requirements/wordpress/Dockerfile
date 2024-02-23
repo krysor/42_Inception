@@ -1,7 +1,7 @@
 FROM alpine:3.18
 
 RUN apk update && apk upgrade && \ 
-	apk add wget php php-fpm php-phar php-curl php-mysqli mariadb-client
+	apk add wget mariadb-client php php-fpm php-phar php-curl php-mysqli php-mbstring
 
 RUN sed -i 's#listen = 127.0.0.1:9000#listen = 0.0.0.0:9000#' /etc/php81/php-fpm.d/www.conf
 
