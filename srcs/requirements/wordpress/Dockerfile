@@ -1,7 +1,9 @@
 FROM alpine:3.18
 
 RUN apk update && apk upgrade && \ 
-	apk add wget php php-fpm
+	apk add wget php php-fpm php-phar php-curl php-mysqli mariadb-client
+
+RUN sed -i 's#listen = 127.0.0.1:9000#listen = 0.0.0.0:9000#' /etc/php81/php-fpm.d/www.conf
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
 	chmod +x wp-cli.phar && \

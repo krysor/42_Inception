@@ -18,6 +18,7 @@ clean:		down
 
 fclean:		clean
 			sudo rm -rf /home/${USER}/data/DataBase/*
+			sudo rm -rf /home/${USER}/data/WebsiteFiles/*
 
 re:			clean all
 
