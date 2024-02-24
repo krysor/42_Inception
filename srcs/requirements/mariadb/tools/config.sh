@@ -10,9 +10,9 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
 
 	if [ ! -f "tmp/init.sql" ]; then		
 		echo "FLUSH PRIVILEGES;" >> /tmp/init.sql
-		echo "CREATE DATABASE $MARIADB_NAME;" >> /tmp/init.sql
-		echo "CREATE USER '$MARIADB_USER'@'%' IDENTIFIED by '$MARIADB_PASSWORD';"  >> /tmp/init.sql
-		echo "GRANT ALL PRIVILEGES ON $MARIADB_NAME.* TO '$MARIADB_USER'@'%';" >> /tmp/init.sql
+		echo "CREATE DATABASE $DATABASE_NAME;" >> /tmp/init.sql
+		echo "CREATE USER '$DATABASE_USER'@'%' IDENTIFIED by '$DATABASE_PASSWORD';"  >> /tmp/init.sql
+		echo "GRANT ALL PRIVILEGES ON $DATABASE_NAME.* TO '$DATABASE_USER'@'%';" >> /tmp/init.sql
 		echo "FLUSH PRIVILEGES;" >> /tmp/init.sql
 	fi
 

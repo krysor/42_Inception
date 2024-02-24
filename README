@@ -18,25 +18,25 @@ x 9. Dockerfiles must get called in "docker-compose.yml" in Makefile
 
 Set up:
 x 1. docker container w/ NGINX with TLSv1.2 / v1.3
-2. docker container w/ WordPress + php-fpm (installed and configured) (w/o NGINX !!!)
+x 2. docker container w/ WordPress + php-fpm (installed and configured) (w/o NGINX !!!)
 x 3. docker container w/ MariaDB (w/o NGINX !!!)
-4. volume w/ WordPress database
-5. volume 2 w/ WordPress website files
-6. docker-network that establishes connection between containers
+x 4. volume w/ WordPress database
+x 5. volume 2 w/ WordPress website files
+x 6. docker-network that establishes connection between containers
 
 DO NOT:
-0. pull ready-made Docker images
-1. use DockerHub (except Debian/Alpine)
-2. use patch based on 'tail -f', 'bash', 'sleep infinity', 'while true'
-3. use network: host or --link
-4. start containers with command running an inf loop (same for any cmd in entrypoint (scripts))
-5. use "latest" tag
-6. put password in Dockerfiles
-7. include .env or README!!!
+x 0. pull ready-made Docker images
+x 1. use DockerHub (except Debian/Alpine)
+x 2. use patch based on 'tail -f', 'bash', 'sleep infinity', 'while true'
+x 3. use network: host or --link
+x 4. start containers with command running an inf loop (same for any cmd in entrypoint (scripts))
+x 5. use "latest" tag
+x 6. put password in Dockerfiles
+x 7. include .env or README!!!
 
 DO:
 x 0. file structure in example
-1. WordPress DB: 2 users of which 1 admin (admin username can't contain "admin")
+x 1. WordPress DB: 2 users of which 1 admin (admin username can't contain "admin")
 x 2. volumes available in "/home/login/data" folder of the host machine (login=kkaczoro) 
 x 3. configure domain name so it points to local IP address
 x 4. domain name = login.42.fr (replace login)
@@ -45,8 +45,8 @@ x 6. store environment variables in .env file
 x 7. NGINX container = the only entrypoint (via the port 443 using TLSv1.2 / 1.3)
 x 8. store creditentials, API keys, environment variables in .env IGNORED by git
 
-9. include a "network line" in the docker-compose.yml 
-10. container have to restart in case of crash !!!
+x 9. include a "network line" in the docker-compose.yml 
+x 10. container have to restart in case of crash !!!
 
 } END MANDATORY
 
