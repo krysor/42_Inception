@@ -39,7 +39,8 @@ DOCKER
 	sudo docker logs containerName
 - execute code in the container
 	sudo docker exec -it containerID CMD
-
+- to show mounts of a container
+	docker inspect -f '{{ .Mounts }}' containerid
 
 NGINX
 - to test configuration file
