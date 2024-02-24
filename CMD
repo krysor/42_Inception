@@ -7,6 +7,8 @@ GENERAL
   curl -k ipAddress
 - static ip table
 	edit the file /etc/hosts
+- open firefox on headless machine
+	xinit firefox $* -- :0 vt$XDG_VTNR
 
 SSH
 - to ssh into vm:
