@@ -1,7 +1,7 @@
 #!/bin/sh
 
 while ! mariadb -hmariadb -u$MARIADB_USER -p$MARIADB_PASSWORD $MARIADB_NAME; do
-    sleep 3
+    sleep 1
 done
 
 if [ ! -f /var/www/html/wp-config.php ]; then
