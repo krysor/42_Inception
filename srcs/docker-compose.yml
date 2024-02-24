@@ -9,7 +9,7 @@ services:
     ports:
       - 443:443
     volumes:
-      - /home/${LOGIN}/data/WebsiteFiles:/www/data/html
+      - /home/${LOGIN}/data/WebsiteFiles:var/www/html/
     networks:
      - docker-network 
     restart: always
