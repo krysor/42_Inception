@@ -9,6 +9,7 @@ GENERAL
 	edit the file /etc/hosts
 - open firefox on headless machine
 	xinit firefox $* -- :0 vt$XDG_VTNR
+	sudo xinit firefox $* -- :1
 
 SSH
 - to ssh into vm:
